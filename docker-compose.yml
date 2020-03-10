@@ -1,0 +1,14 @@
+version: "3"
+services:
+  cs16:
+    image: b4k3r/cs16-server
+    ports:
+     - "27015:27015"
+     - "27015:27015/udp"
+    restart: always
+    volumes:
+     - "$PWD/fy_snow_dew.bsp:/home/steam/cs16/cstrike/maps/fy_snow_dew.bsp"
+     - "$PWD/fy_snow_dew.txt:/home/steam/cs16/cstrike/maps/fy_snow_dew.txt"
+     - "$PWD/server.cfg:/home/steam/cs16/cstrike/server.cfg"
+     - "$PWD/mapcycle.txt:/home/steam/cs16/cstrike/mapcycle.txt"
+    command: ./hlds_run -game cstrike -strictportbind -autoupdate -ip 0.0.0.0 +sv_lan 1 +map fy_iceworld_xxxl -maxplayers 32
