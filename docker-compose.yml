@@ -1,13 +1,13 @@
 version: "3"
 services:
   cs16:
-    image: vuthaihoc/cs16:latest
+    image: vuthaihoc/cs16:v2024
     ports:
      - "27015:27015"
      - "27015:27015/udp"
     restart: always
     environment:
-     - START_MAP=fy_snow_dew
+     - START_MAP=fy_tuscan
      - MAXPLAYERS=32
      - SERVER_NAME=VNP-CS1.6
      - START_MONEY=16000
